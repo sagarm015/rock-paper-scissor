@@ -331,7 +331,7 @@ function fillResultPr4(p1,p2,p3,p4){
   }
 }
 
-for(var i=0;i<10;i++){
+for(var i=0;i<50;i++){
 randomIndex= Math.floor(Math.random()*3);
 p1=choices[randomIndex];
 randomIndex= Math.floor(Math.random()*3);
@@ -351,4 +351,15 @@ const newUser = new User({
   player4: pr4
 })
 newUser.save();
+ pr1=[null,0,0,0];
+ pr2=[0,null,0,0];
+ pr3=[0,0,null,0];
+ pr4=[0,0,0,null];
 }
+User.find(function(Err,result){
+  var count=1;
+  result.forEach(function(element){
+    console.log(count++,"iteration");
+    console.log(element);
+  });
+});
